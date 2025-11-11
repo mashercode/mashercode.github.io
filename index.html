@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Özay - Dünyadaki Tek Çiçek</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #000000);
+      color: white;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-top: 50px;
+      color: #ffdde1;
+      text-shadow: 0 0 15px #ff7eb9;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+      color: #fff;
+    }
+
+    .heart-shape {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      margin: 40px auto;
+      background: pink;
+      transform: rotate(-45deg);
+      animation: pulse 2s infinite;
+    }
+
+    .heart-shape::before,
+    .heart-shape::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart-shape::before { top: -50px; left: 0; }
+    .heart-shape::after { left: 50px; top: 0; }
+
+    @keyframes pulse {
+      0% { transform: rotate(-45deg) scale(1); }
+      50% { transform: rotate(-45deg) scale(1.2); }
+      100% { transform: rotate(-45deg) scale(1); }
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #ff4d6d;
+      padding: 12px 25px;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ff85a1;
+      box-shadow: 0 0 15px #ff85a1;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      font-size: 0.9rem;
+      color: #ffb6c1;
+    }
+
+    /* Kalp animasyonları */
+    .floating-heart {
+      position: absolute;
+      bottom: -10px;
+      color: pink;
+      font-size: 20px;
+      opacity: 0.8;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Özay 🌸</h1>
+  <div class="heart-shape"></div>
+  <p>Sen bu dünyanın en nadide çiçeğisin...  
+  Güzelliğin, zarafetin ve ışığınla her şeyi renklendiriyorsun.  
+  Sen sadece bir isim değilsin, Özay... bir şiir gibisin, kalbimin en güzel satırı. 💖</p>
+
+  <a href="sayfa2.html" class="button">Devam Et 💞</a>
+
+  <footer>❤️ Bu site senin için yapıldı, çünkü sen özelsin Özay ❤️</footer>
+
+  <script>
+    // Kalp animasyonu
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('floating-heart');
+      heart.innerText = '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
