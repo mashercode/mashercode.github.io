@@ -1,1 +1,1 @@
-# mashercode.github.io
+delete.com
